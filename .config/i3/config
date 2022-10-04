@@ -193,5 +193,10 @@ bar {
 
 
 ###############################################################################
-include ./`hostname`.conf
 
+# enable keyboard tab to click
+exec "xinput set-prop 'ELAN0501:00 04F3:3037 Touchpad' 'libinput Tapping Enabled' 1"
+
+# brightness adjust
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 3%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
