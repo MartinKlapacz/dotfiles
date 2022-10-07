@@ -138,6 +138,6 @@ alias nano='nano --rcfile ~/.nanorc'
 wh1000xm3='38:18:4c:19:69:D7'
 alias xm3="echo 'connect $wh1000xm3' | bluetoothctl"
 alias disxm3="echo 'disconnect $wh1000xm3' | bluetoothctl"
-
+alias d-c="docker-compose"
 
 . "$HOME/.cargo/env"
