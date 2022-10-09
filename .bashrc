@@ -141,3 +141,5 @@ alias disxm3="echo 'disconnect $wh1000xm3' | bluetoothctl"
 alias d-c="docker-compose"
 
 . "$HOME/.cargo/env"
+
+feh --randomize --bg-scale ~/Pictures/*
