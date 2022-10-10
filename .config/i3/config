@@ -182,13 +182,11 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status 
+    status_command i3status 
 	mode dock
 	position top
 	workspace_buttons yes
 	workspace_min_width 40
-
-
 }
 
 
@@ -205,3 +203,36 @@ for_window [class=".*"] border pixel 3
 gaps inner 15
 gaps outer 0
 
+
+set $mode_system System: (l) logout, (s) suspend, (r) reboot, (p) shutdown
+bindsym $mod+p mode "$mode_system"
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3-msg exit,            mode "default"
+    bindsym s exec --no-startup-id systemctl suspend,      mode "default"
+    bindsym r exec --no-startup-id systemctl reboot,       mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff,     mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+p mode "default"
+}
+
+set $mode_launcher Launch: [f]irefox [n]autilus [s]potify | [i]ntellij [w]ebstorm [c]lion [p]ycharm
+bindsym $mod+o mode "$mode_launcher"
+mode "$mode_launcher" {
+
+    # general 
+    bindsym f exec --no-startup-id firefox
+    bindsym n exec --no-startup-id nautilus
+    bindsym s exec --no-startup-id spotify
+
+    # JetBrain IDEs
+    bindsym i exec --no-startup-id idea
+    bindsym w exec --no-startup-id webstorm
+    bindsym c exec --no-startup-id clion
+    bindsym p exec --no-startup-id pycharm
+
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
