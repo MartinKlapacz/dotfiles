@@ -160,16 +160,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym semicolon resize shrink width 10 px or 10 ppt
+        bindsym l resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym j resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -204,7 +204,7 @@ gaps inner 15
 gaps outer 0
 
 
-set $mode_system System: (l) logout, (s) suspend, (r) reboot, (p) shutdown
+set $mode_system System: (l) logout, (s) suspend, (r) reboot, (p) poweroff
 bindsym $mod+p mode "$mode_system"
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3-msg exit,            mode "default"
@@ -217,7 +217,7 @@ mode "$mode_system" {
     bindsym $mod+p mode "default"
 }
 
-set $mode_launcher Launch: [f]irefox [n]autilus [s]potify | [i]ntellij [w]ebstorm [c]lion [p]ycharm
+set $mode_launcher Launch: [f]irefox [n]autilus [s]potify (g) signal-desktop (e) settings [t]weaks | [i]ntellij [w]ebstorm [c]lion [p]ycharm
 bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
 
@@ -225,6 +225,9 @@ mode "$mode_launcher" {
     bindsym f exec --no-startup-id firefox
     bindsym n exec --no-startup-id nautilus
     bindsym s exec --no-startup-id spotify
+    bindsym g exec --no-startup-id signal-desktop
+    bindsym e exec --no-startup-id gnome-control-center
+    bindsym t exec --no-startup-id gnome-tweaks
 
     # JetBrain IDEs
     bindsym i exec --no-startup-id idea
@@ -236,3 +239,4 @@ mode "$mode_launcher" {
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
+
