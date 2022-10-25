@@ -141,5 +141,6 @@ alias disxm3="echo 'disconnect $wh1000xm3' | bluetoothctl"
 alias d-c="docker-compose"
 alias senv="source ~/pro/env/bin/activate"
 
-. "$HOME/.cargo/env"
-
+if [ -e $HOME/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi
