@@ -144,3 +144,6 @@ alias senv="source ~/pro/env/bin/activate"
 if [ -e $HOME/.cargo/env ]; then
     . "$HOME/.cargo/env"
 fi
+
+
+alias i3status="nano .config/i3status/config && killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"
