@@ -132,11 +132,15 @@ alias cd..="cd .."
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
 alias i3conf="nano ~/.config/i3/config && i3-msg reload"
 alias cd...="cd ../.."
+alias nano='nano --rcfile ~/.nanorc'
 
 # bluetooth devices
 wh1000xm3='38:18:4c:19:69:D7'
 alias xm3="echo 'connect $wh1000xm3' | bluetoothctl"
 alias disxm3="echo 'disconnect $wh1000xm3' | bluetoothctl"
+alias d-c="docker-compose"
+alias senv="source ~/pro/env/bin/activate"
 
-
-. "$HOME/.cargo/env"
+if [ -e $HOME/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi
