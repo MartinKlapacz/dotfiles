@@ -138,8 +138,12 @@ alias d-c="COMPOSE_HTTP_TIMEOUT=10000 docker-compose"
 alias d="COMPOSE_HTTP_TIMEOUT=10000 docker"
 alias senv="source ~/pro/env/bin/activate"
 
-alias pdf="qpdfview"
+pdf() {
+   okular "$1" &
+}
 
+
+alias sem="cd ~/pCloudDrive/TUM/DEA\ -\ Master/4_sem/"
 
 
 # bluetooth devices
