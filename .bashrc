@@ -130,7 +130,10 @@ alias config='/usr/bin/git --git-dir=/home/martin/.cfg/ --work-tree=/home/martin
 setxkbmap eu
 alias cd..="cd .."
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
-alias i3conf="nano ~/.config/i3/config && i3-msg reload"
+alias i3conf="nano ~/.config/i3/config && i3-msg reload && killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"
+alias i3stat="nano ~/.config/i3status/config && i3-msg reload && killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"
+
+
 alias cd...="cd ../.."
 alias nano='nano --rcfile ~/.nanorc'
 
@@ -157,3 +160,7 @@ alias senv="source ~/pro/env/bin/activate"
 if [ -e $HOME/.cargo/env ]; then
     . "$HOME/.cargo/env"
 fi
+
+
+
+alias i3bar="killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"
