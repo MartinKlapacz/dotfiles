@@ -130,9 +130,24 @@ alias config='/usr/bin/git --git-dir=/home/martin/.cfg/ --work-tree=/home/martin
 setxkbmap eu
 alias cd..="cd .."
 alias bashrc="nano ~/.bashrc && source ~/.bashrc"
-alias i3conf="nano ~/.config/i3/config && i3-msg reload"
+alias i3conf="nano ~/.config/i3/config && i3-msg reload && killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"
+alias i3stat="nano ~/.config/i3status/config && i3-msg reload && killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"
+
+
 alias cd...="cd ../.."
 alias nano='nano --rcfile ~/.nanorc'
+
+alias d-c="COMPOSE_HTTP_TIMEOUT=10000 docker-compose"
+alias d="COMPOSE_HTTP_TIMEOUT=10000 docker"
+alias senv="source ~/pro/env/bin/activate"
+
+pdf() {
+   okular "$1" &
+}
+
+
+alias sem="cd ~/pCloudDrive/TUM/DEA\ -\ Master/4_sem/"
+
 
 # bluetooth devices
 wh1000xm3='38:18:4c:19:69:D7'
@@ -141,9 +156,10 @@ alias disxm3="echo 'disconnect $wh1000xm3' | bluetoothctl"
 alias d-c="docker-compose"
 alias senv="source ~/pro/env/bin/activate"
 
+# rust
 if [ -e $HOME/.cargo/env ]; then
     . "$HOME/.cargo/env"
 fi
 
-
 alias i3status="nano .config/i3status/config && killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"
+alias i3bar="killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"

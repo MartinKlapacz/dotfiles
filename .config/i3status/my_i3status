@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+full_text="“MY LORDS!” he shouted, his voice booming off the rafters. “Here is what I say to these two kings!” He spat. “ Renly Baratheon is nothing to me, nor Stannis neither. Why should they rule over me and mine, from some flowery seat in Highgarden or Dorne? What do they know of the Wall or the wolfswood or the barrows of the First Men? Even their gods are wrong. The Others take the Lannisters too, I’ve had a bellyful of them.” He reached back over his shoulder and drew his immense two-handed greatsword. “Why shouldn’t we rule ourselves again? It was the dragons we married, and the dragons are all dead!” He pointed at Robb with the blade. “There sits the only king I mean to bow my knee to, m’lords,” he thundered. “The King in the North!”"
+display_length=64
+i=0
+
+/usr/bin/i3status | while :
+do
+    read line
+    text=${full_text:$i:$display_length}
+    echo "$text | $line" || exit 1
+    i=$((($i + 1) % ${#full_text}))
+done
