@@ -35,8 +35,14 @@ if [ -e "$HOME/.cargo/env" ] ; then
     . "$HOME/.cargo/env"
 fi
 
-
+# set background
 feh --bg-fill ~/Pictures/013.png
+
+# set keyboard layout
 setxkbmap eu 
+
+# start pCloud
+$HOME/apps/pcloud & > /dev/null
+
 
 
