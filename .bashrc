@@ -163,12 +163,6 @@ if [ -e $HOME/.cargo/env ]; then
 fi
 
 
-
-alias i3bar="killall i3bar && i3-msg -t command 'exec --no-startup-id i3bar --bar_id=bar-0'"
-
-
-
-
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
