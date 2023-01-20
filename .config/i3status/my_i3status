@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+
+/usr/bin/i3status | while :
+do
+    read line
+    running_containers=`docker ps | tail -n +2 |  grep -o '[^\ ]*$' | tr '\n' ' '`
+    echo "$running_containers | $line" || exit 1
+done

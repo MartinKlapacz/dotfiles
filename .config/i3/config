@@ -190,6 +190,8 @@ bar {
 }
 
 
+###############################################################################
+
 for_window [class=".*"] border pixel 3
 gaps inner 15
 gaps outer 0
@@ -230,4 +232,8 @@ mode "$mode_launcher" {
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
+
+# sound
+bindsym $mod+Prior exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym $mod+Next exec --no-startup-id amixer -D pulse sset Master 5%-
 
