@@ -179,11 +179,15 @@ source <(ng completion script)
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
 if [ -f /home/martin/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/martin/.config/synth-shell/synth-shell-prompt.sh
+    source /home/martin/.config/synth-shell/synth-shell-prompt.sh
 fi
 
 ##-----------------------------------------------------
 ## better-history
 if [ -f /home/martin/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/martin/.config/synth-shell/better-history.sh
+    source /home/martin/.config/synth-shell/better-history.sh
 fi
+
+
+
+
