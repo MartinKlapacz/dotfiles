@@ -144,3 +144,21 @@ alias senv="source ~/pro/env/bin/activate"
 
 . "$HOME/.cargo/env"
 
+
+##-----------------------------------------------------
+## synth-shell-prompt.sh
+if [ -f /home/martin/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/martin/.config/synth-shell/synth-shell-prompt.sh
+fi
+
+##-----------------------------------------------------
+## alias
+if [ -f /home/martin/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/martin/.config/synth-shell/alias.sh
+fi
+
+##-----------------------------------------------------
+## better-history
+if [ -f /home/martin/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/martin/.config/synth-shell/better-history.sh
+fi
