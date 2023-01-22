@@ -27,22 +27,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 
-# Added by Toolbox App
-export PATH="$PATH:/home/martin/.local/share/JetBrains/Toolbox/scripts"
-
-if [ -e "$HOME/.cargo/env" ] ; then
-    . "$HOME/.cargo/env"
-fi
-
-# set background
-feh --bg-fill ~/Pictures/013.png
-
 # set keyboard layout
 setxkbmap eu 
-
-# start ownCloud
-$HOME/apps/ownCloud-3.0.0.9215-x86_64.AppImage &
-
-# start toolbox
-$HOME/apps/jetbrains-toolbox &
-
