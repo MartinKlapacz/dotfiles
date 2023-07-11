@@ -156,6 +156,7 @@ alias xm3="echo 'connect $wh1000xm3' | bluetoothctl"
 alias disxm3="echo 'disconnect $wh1000xm3' | bluetoothctl"
 alias d-c="docker-compose"
 alias senv="source ~/pro/env/bin/activate"
+alias rm="trash"
 
 # rust
 if [ -e $HOME/.cargo/env ]; then
@@ -185,3 +186,7 @@ fi
 
 
 
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
+# avelios
+alias gbootrun="SPRING_PROFILES_ACTIVE=dev ./gradlew bootRun"
